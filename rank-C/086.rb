@@ -11,3 +11,6 @@ end
 
 name = gets.chomp
 puts create_handlename(name)
+
+# rejectは偽の要素のみ取得
+# selectは真の要素のみ取得

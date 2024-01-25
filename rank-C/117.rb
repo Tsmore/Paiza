@@ -3,7 +3,7 @@
 def calc_unprofitable_stores(n, m, a, b, c, sales)
   unprofitable_stores = 0
   sales.each do |sold|
-    total_profit = sold * c * m
+    total_profit = sold * c
     total_cost = a + (b * m)
     unprofitable_stores += 1 if total_profit < total_cost
   end

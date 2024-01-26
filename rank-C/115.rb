@@ -1,48 +1,20 @@
 # 渋滞の距離
 
-# 普通に記述したらこうなった
-# n, m = gets.split.map(&:to_i)
+# 入力で読み込んだ文字列を空白で分解(`split`)
+# 分割した文字列を整数に変換(`map(&:to_i)`)
+n, m = gets.split.map(&:to_i)
 
-# total_congestion = 0
+# 操縦帯距離を保持する変数を初期化
+total_congestion = 0
 
-# (n - 1).times do
-#   distance = gets.to_i
-#   total_congestion += distance if distance <= m
-# end
-
-# puts total_congestion
-
-# Paiza用に記述したやつ
-INPUT1 = <<~"EOS"
-5 10
-5
-6
-25
-4
-EOS
-
-INPUT2 = <<~"EOS"
-4 30
-30
-10
-40
-EOS
-
-def solve(input)
-  data = input.split("\n")
-  n, m = data.shift.split.map(&:to_i)
-
-  total_congestion = 0
-
-  (n - 1).times do
-    distance = data.shift.to_i
-    total_congestion += distance if distance <= m
-  end
-
-  puts total_congestion
+# 車1台分を引いてループ処理(`(n - 1).times do`)
+# 車が2台なら車間距離は1のため
+(n - 1).times do
+  # 入力から車間距離を読み込み整数に変換(`gets.to_i`)
+  distance = gets.to_i
+  # 測定された車間距離`distance`が渋滞を定義する `m`以下であれば
+  # `total_congestion`に加算
+  total_congestion += distance if distance <= m
 end
 
-solve(INPUT1)
-
-# これがパイザ用
-# solve(STDIN.read)
+puts total_congestion

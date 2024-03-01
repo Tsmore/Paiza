@@ -20,8 +20,8 @@ n.times do
   max_agi = max_agi.to_i
 
   # 最初に受け取ったATK、DEF、AGIの全てが進化条件を満たしているか比較演算子で確認
-  # 空の配列`evoluations`に格納
-  # between?(min, max)
+  # 進化先があれば配列`evoluations`に格納
+  # between?(min, max)を利用
   if ATK.between?(min_atk, max_atk) && DEF.between?(min_def, max_def) && AGI.between?(min_agi, max_agi)
     evoluations << name
   end
